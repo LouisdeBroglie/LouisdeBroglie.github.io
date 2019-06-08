@@ -1,0 +1,135 @@
+---
+layout: default
+---
+<!--
+<div class="row">
+  <div id="myArticle" class="col-sm-9">
+    <div class="post-area post">
+      <article>
+        {{ welcome }}
+      </article>
+    </div>
+  </div>
+</div>
+-->
+<p><br/></p>
+<div id="index" class="row">
+  <div class="col-sm-9">
+    <div class="post-area ">
+	  <div class="post-list-header">
+	  {{ page.list-cat }}
+	  </div>
+      <div class="post-list-body">
+        <div class="all-posts" post-cate="All">
+            {% if page.list-cat == "Blog" %}
+            {% assign DisplayCat = site.categories.Blog %}
+            {% elsif page.list-cat == "Project" %}
+            {% assign DisplayCat = site.categories.Project %}
+            {% else %}
+            {% assign DisplayCat = site.posts %}
+            {% endif %}
+          
+          {% for post in DisplayCat %}
+            {% if post.ex-url %}
+            <a class="post-list-item" href="{{ post.ex-url }}">
+            {% else %}
+            <a class="post-list-item" href="{{ post.url | prepend: site.baseurl }}">
+            {% endif %}
+            
+              {% if post.img %}
+                    <img class="imgbox" src="{{ post.img }}" ></img>
+              <div class="text-block-with-img">
+              {% else %}
+              <div class="text-block">
+              {% endif %}
+                    <h2>
+                    {{ post.title }}
+                    </h2>
+                    <span class="">{{ post.date | date: "%b %-d, %Y" }}</span>
+                    <p>
+                        {{ post.excerpt }}
+                    </p>
+              </div>
+            </a>
+          {% endfor %}
+        </div>
+        <!-- <div class="posts-in-categories"> -->
+        {% for tag in site.tags %}
+          <div post-cate="{{tag | first}}">
+            {% for posts in tag  %}
+              {% for post in posts %}
+                {% if post.url %}
+                    {% if post.ex-url %}
+                    <a class="post-list-item" href="{{ post.ex-url }}">
+                    {% else %}
+                    <a class="post-list-item" href="{{ post.url | prepend: site.baseurl }}">
+                    {% endif %}
+                    
+                    {% if post.img %}
+                            <img class="imgbox" src="{{ post.img }}" ></img>
+                    <div class="text-block-with-img">
+                    {% else %}
+                    <div class="text-block">
+                    {% endif %}
+                            <h2>
+                            {{ post.title }}
+                            </h2>
+                            <span class="">{{ post.date | date: "%b %-d, %Y" }}</span>
+                            <p>
+                                {{ post.excerpt }}
+                            </p>
+                    </div>
+                    </a>
+                {% endif %}
+              {% endfor %}
+            {% endfor %}
+          </div>
+        {% endfor %}
+        <!-- </div> -->
+      </div>
+    </div>
+  </div>
+  <div class="col-sm-3">
+    <div class="shadow-corner-curl hidden-xs">
+      <div class="categories-list-header">
+        {{ site.title }}
+      </div>
+      <br/>
+      <img class = "avatar_s" width=100px src="/assets/avatar/Di-new-avatar.png" alt="shrekshao" />
+      <div class="intro-block">
+      {{ content }}
+      <br/>
+      </div>
+      </p>
+    </div>
+    
+    <br/>
+    
+    <div class="shadow-corner-curl hidden-xs">
+      <div class="categories-list-header">
+        Tags
+      </div>
+      
+      <a href="javascript:;" class="categories-list-item" cate="All">
+        All<span class="my-badge"> {{site.posts | size}}</span>
+      </a>
+      {% for tag in site.tags %}
+        <a href="javascript:;" class="categories-list-item" cate="{{ tag | first }}">
+          {{ tag | first }} <span class="my-badge">{{ tag | last | size }}</span>
+        </a>
+      {% endfor %}
+    </div>
+  </div>
+</div>
+
+
+<script>
+  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+  })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+
+  ga('create', 'UA-75831470-1', 'auto');
+  ga('send', 'pageview');
+
+</script>
