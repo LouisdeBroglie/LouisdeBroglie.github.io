@@ -1,7 +1,7 @@
-<!DOCTYPE html>
+﻿<!DOCTYPE html>
 <html lang="en">
 <head>
-	<title>ShrekShao</title>
+	<title>MainPage</title>
 	<meta charset="utf-8">
 	<meta name="viewport" content="width=device-width, user-scalable=no, minimum-scale=1.0, maximum-scale=1.0">
 	<style>
@@ -99,16 +99,7 @@
 
 		varying vec2 vUV;
 
-		/*
-		* Description : Array and textureless GLSL 2D/3D/4D simplex
-		*               noise functions.
-		*      Author : Ian McEwan, Ashima Arts.
-		*  Maintainer : ijm
-		*     Lastmod : 20110822 (ijm)
-		*     License : Copyright (C) 2011 Ashima Arts. All rights reserved.
-		*               Distributed under the MIT License. See LICENSE file.
-		*               https://github.com/ashima/webgl-noise
-		*/
+		
 
 		vec4 _mod289(vec4 x)
 		{
@@ -168,9 +159,7 @@
 			return p;
 		}
 
-		/*
-		* Implemented by Ian McEwan, Ashima Arts, and distributed under the MIT License.  {@link https://github.com/ashima/webgl-noise}
-		*/
+		
 		float snoise(vec2 v)
 		{
 			const vec4 C = vec4(0.211324865405187,  // (3.0-sqrt(3.0))/6.0
@@ -293,8 +282,7 @@
 										dot(p2,x2), dot(p3,x3) ) );
 		}
 
-		// Using  @eddietree implementation from
-		// His brilliant demo 'Artifacts'
+	
 
 		vec3 snoiseVec3( vec3 x ){
 
@@ -510,16 +498,16 @@
 		<p>
 			<a href="all">Goto Website MainPage</a><br/>
 			<br/>
-			ShrekShao<br/>
-			A Mediocre Programmer<br/>
-			Weapon: Black Sabor Tooth (Sword)<br/>
-			Special Move: I don't know how to translate this...<br/>
+			I'm zly<br/>
+			A Distributed Storage Database Engineer<br/>
+			mainly focus on ES HBase <br/>
+			also interested in Flink<br/>
 			<br/>
-			狄学长 狄克<br/>
-			一个生来平庸的程序猿<br/>
-			武器：苍牙<br/>
-			绝招：奔狼裂斩 狼袭月斩 苍痕抡斩<br/>
-				 (燃烧的中二之魂！)<br/>
+			我是zly<br/>
+			分布式存储工程师，主要研究ES和HBase等Nosql数据库<br/>
+			同时也对实时计算感兴趣<br/>
+			一直在学习探索... <br/>
+				希望能和你做点有意思的项目<br/>
 			<br/>
 		    右边粒子系统国内载入有点慢。。(要加个loading...)
 		</p>
