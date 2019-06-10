@@ -1,15 +1,15 @@
 ---
 layout: post
-title:  "Magic poser Webapp Lite"
+title:  "Spring uber "
 categories: Project
 tag: 
 - Webassembly
 - WebGL
 - React
 comments: true
-img: /assets/img/mpweb.jpg
+img: /assets/img/uber.gif
 ex-url: https://webapp.magicposer.com
 ---
-My first shipping project working with Magic Poser team! WebAssembly is pretty amazing.
+My first spring boot project simulating Uber Taxi system.
 
 <!--more-->
